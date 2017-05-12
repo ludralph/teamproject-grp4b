@@ -5,16 +5,16 @@ class Employee{
 		this.lastName = lastName;
 		this.employeeType = employeeType;
 		this.yearsEmployed = yearsEmployed;
-		this.minimumWage = 18,000;
-		this.salary = 0;
+		this.minimumWage = 18000;
+		this.totalSalary = 0;
 	}
-	get Salary(){
-		this.salary = this.minimumWage * this.level
+		Salary(){
+		this.totalSalary = this.minimumWage * this.level
 		if(this.bonus !== 0){
-			this.salary = this.salary + this.bonus;
-			return this.salary;
+			this.totalSalary = this.totalSalary + this.bonus;
+			return this.totalSalary;
 		}
-			return this.salary;
+			return this.totalSalary;
 	}
 }
 
@@ -22,8 +22,8 @@ class Intern extends Employee{
 	constructor(firstName,lastName, employeeType, yearsEmployed){
 		super(firstName,lastName,employeeType,yearsEmployed);
 		this.level = 2;
-		if(this.yearsEmployed > 0){
-			this.bonus = 500 * this.yearsEmployed;
+		if(yearsEmployed > 0){
+			this.bonus = 500 * yearsEmployed;
 		}else{
 			this.bonus = 0;
 		}
@@ -35,8 +35,8 @@ class Associate extends Employee{
 	constructor(firstName,lastName, employeeType, yearsEmployed){
 		super(firstName,lastName,employeeType,yearsEmployed);
 		this.level = 3;
-		if(this.yearsEmployed > 0){
-			this.bonus = 1000 * this.yearsEmployed;
+		if(yearsEmployed > 0){
+			this.bonus = 1000 * yearsEmployed;
 		}else{
 			this.bonus = 0;
 		}
@@ -47,50 +47,45 @@ class Associate extends Employee{
 class Manager extends Employee{
 
   constructor(firstName, lastName,employeeType,yearsEmployed){
-    super(firstName,lastName,employeeType,yearsEmployed);
-  }
+  		super(firstName,lastName,employeeType,yearsEmployed);
+    	this.level = 4;
+    	if (yearsEmployed > 0){
+    		this.bonus = 1500 * yearsEmployed;
+  		}else{
+    		this.bonus = 0;
+  		}
+    }
 
-  this.level = 4;
-
-  if (this.yearsEmployed > 0){
-    this.bonus = 1500 * yearsEmployed;
-  }
-  else{
-    this.bonus = 0;
-  }
 }
 
 class Executive extends Employee{
   constructor(firstName, lastName,employeeType,yearsEmployed){
     super(firstName,lastName,employeeType,yearsEmployed);
-  }
-  this.level = 5;
-  if (yearsEmployed > 0){
-    this.bonus = 2000 * yearsEmployed;
-  }
-  else{
-    this.bonus = 0;
+    this.level = 5;
+  	if (yearsEmployed > 0){
+    	this.bonus = 2000 * yearsEmployed;
+  	}else{
+    	this.bonus = 0;
+  	}
   }
 }
 
-class  Director extends Employee{} {
+class  Director extends Employee{
   constructor(firstName, lastName,employeeType,yearsEmployed){
     super(firstName,lastName,employeeType,yearsEmployed);
+    this.level = 6;
+  	if (yearsEmployed > 0){
+    	this.bonus = 2500 * yearsEmployed;
+  	}else{
+    	this.bonus = 0;
+  	}
   }
-  this.level = 6;
-  if (yearsEmployed > 0){
-    this.bonus = 2500 * yearsEmployed;
-  }
-  else{
-    this.bonus = 0;
-  }
-
 }
 
-module.exports{
-  Manager:manager,
-  Executive:executive,
-  Director:director
-	Intern: Intern,
-	Associate: Associate
+module.exports = {
+  Manager: Manager,
+  Executive: Executive,
+  Director: Director,
+  Intern: Intern,
+  Associate: Associate
 }
