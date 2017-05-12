@@ -1,0 +1,30 @@
+{
+  "name": "teamproject-grp4b",
+  "version": "1.0.0",
+  "description": "employee salary calculator app",
+  "main": "app/employee.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ludralph/teamproject-grp4b.git"
+  },
+  "keywords": [
+    "employee",
+    "salary",
+    "calculator"
+  ],
+  "author": "Amara, Ope, Etim and Saheed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ludralph/teamproject-grp4b/issues"
+  },
+  "homepage": "https://github.com/ludralph/teamproject-grp4b#readme",
+  "dependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
