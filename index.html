@@ -6,7 +6,8 @@
 Salary Calculator
 </title>
     
-   <link rel="stylesheet" type="text/css" href="css/style.css">     
+   <link rel="stylesheet" type="text/css" href="css/style.css"> 
+   <script type="text/javascript" src="app/employee.js"></script> 
 
     
 </head>
@@ -28,28 +29,24 @@ Salary Calculator
         </div>
         <div id="contentDiv"> 
         
+         
         
-        
-        
-      
-        
-        <form>
             <table class="inputTable">
                 <tr>
                  <td> First Name</td>
-                     <td> <input class="inputBox" type="text" name="firstName" /></td>
+                     <td> <input class="inputBox" id="fName" type="text" name="firstName" required></td>
                     
                 </tr>
                 <tr>
                  <td> Last Name</td>
-                     <td> <input class="inputBox" type="text" name="surname" /></td>
+                     <td> <input class="inputBox" id="lName"type="text" name="surname" required></td>
                     
                 </tr>
                 <tr>
                  <td>Employee type</td>
                      <td>
-                     <select class="inputBox" name="employeeType">
-        
+                     <select class="inputBox" id="eType"name="employeeType">
+            <option value="select"> --SELECT-- </option>       
             <option value="Intern">Intern</option>
             <option value="Associate">Associate</option>
             <option value="Manager">Manager</option>
@@ -66,9 +63,9 @@ Salary Calculator
                  <td>Number Of Years Employed</td>
                      <td>
                     
-         <select class="inputBox" name="numberOfYears" >
+         <select class="inputBox" id="nYears" name="numberOfYears" >
         
-              <option value="1">1</option>
+             <option value="select"> --SELECT-- </option>
              <option value="1">1</option>
              <option value="2">2</option>
              <option value="3">3</option>
@@ -89,16 +86,12 @@ Salary Calculator
                 
                 <tr>
                  <td> </td>
-                     <td><button class="button" type='submit'> Get Salary Report</button></td>
+                     <td><button class="button" id="getSalaryBtn" type='submit'> Get Salary Report</button></td>
                 
-                </tr>
-                
-                
-           
+                </tr>              
             
             </table >
             
-   
             
             <br><br>
             
@@ -107,30 +100,27 @@ Salary Calculator
             
             <table class="resultTable">
             <tr>
-                <td>First Name</td>
-                <td></td>
+                <td>First Name:</td>
+                <td id="fnd"></td>
                 </tr>
             <tr>
-                <td>Last Name</td>
-                <td></td>
+                <td>Last Name:</td>
+                <td id="lnd"></td>
                 </tr>
                 <tr>
-                <td>Employee type</td>
-                    <td></td>
+                <td>Employee type:</td>
+                    <td id="ety"></td>
                 </tr>
                 
                 <tr>
-                <td>Total Salary</td>
-                    <td></td>
+                <td>Total Salary:</td>
+                    <td id="salaryOutput"></td>
                     
                 
                 </tr>
                 
             
             </table>
-        
-        
-        </form>
         
             </div>
             

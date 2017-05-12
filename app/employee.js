@@ -1,4 +1,6 @@
 'use strict';
+
+
 class Employee{
 	constructor(firstName,lastName, employeeType, yearsEmployed){
 		this.firstName = firstName;
@@ -81,6 +83,60 @@ class  Director extends Employee{
   	}
   }
 }
+
+let subBtn;
+
+window.addEventListener('load', function() {
+subBtn = document.getElementById('getSalaryBtn');
+let employeeClass;
+subBtn.addEventListener('click', (e)=>{
+	let fName = document.getElementById('fName').value;
+	let lName = document.getElementById('lName').value;
+	let eType = document.getElementById('eType').value;
+	let nYears = document.getElementById('nYears').value;
+
+	if(fName == '' || fName == ' '){
+		alert('Input a valid first name');
+		return;
+	}
+	if(lName == '' || lName == ' '){
+		alert('Input a valid last name')
+		return;
+	}
+	if(eType == 'select'){
+		alert('Please select an employee type');
+		return;
+	}
+	if(nYears == 'select'){
+		alert('Please select the number of years employed');
+		return;
+	}
+	switch(eType){
+		case 'Intern' :
+			employeeClass = new Intern(fName,lName,eType, nYears).Salary();
+			break;
+		case 'Associate' :
+			employeeClass = new Associate(fName,lName,eType, nYears).Salary();
+			break;
+		case 'Manager' :
+			employeeClass = new Manager(fName,lName,eType, nYears).Salary();
+			break;
+		case 'Executive' :
+			employeeClass = new Executive(fName,lName,eType, nYears).Salary();
+			break;
+		case 'Director' :
+			employeeClass = new Director(fName,lName,eType, nYears).Salary();
+			break;
+
+	}
+	//Set Values into html
+	document.getElementById('fnd').innerText = fName;
+	document.getElementById('lnd').innerText = lName;
+	document.getElementById('ety').innerText = eType;
+	document.getElementById('salaryOutput').innerText = employeeClass;
+
+});
+});
 
 module.exports = {
   Manager: Manager,
