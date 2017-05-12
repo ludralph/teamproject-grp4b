@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use strict';
 class Employee{
 	constructor(firstName,lastName, employeeType, yearsEmployed){
@@ -42,15 +41,8 @@ class Associate extends Employee{
 			this.bonus = 0;
 		}
 	}
-	
-}
 
-module.exports={
-	Intern: Intern,
-	Associate: Associate,
 }
-=======
-'use strict';
 
 class Manager extends Employee{
 
@@ -99,5 +91,6 @@ module.exports{
   Manager:manager,
   Executive:executive,
   Director:director
+	Intern: Intern,
+	Associate: Associate
 }
->>>>>>> subclass
